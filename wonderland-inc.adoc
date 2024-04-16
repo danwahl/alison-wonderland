@@ -1,0 +1,10 @@
+= Wonderland Inc.
+Daniel Wahl
+:doctype: book
+:front-cover-image: image:images/01.jpg[]
+:sectnums:
+:toc: macro
+
+toc::[]
+
+include::01-down-the-rabbit-hole.adoc[]
