@@ -8,7 +8,7 @@ On which Seven looked up and said, "That's right, Five! Always lay the blame on 
 
 "_You'd_ better not talk!" said Five. "I heard the Queen say only yesterday you deserved to be beheaded!"
 
-image::images/28.jpg[Two, Five, and Seven painting the rosebush, align=center]
+image::images/28.jpg['Two, Five, and Seven painting the rosebush', align=center]
 
 "What for?" said the one who had spoken first.
 
