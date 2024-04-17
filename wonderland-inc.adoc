@@ -8,3 +8,25 @@ Daniel Wahl
 toc::[]
 
 include::01-down-the-rabbit-hole.adoc[]
+
+include::02-the-pool-of-tears.adoc[]
+
+include::03-a-caucus-race-and-a-long-tale.adoc[]
+
+include::04-the-rabbit-sends-in-a-little-bill.adoc[]
+
+include::05-advice-from-a-caterpillar.adoc[]
+
+include::06-pig-and-pepper.adoc[]
+
+include::07-a-mad-tea-party.adoc[]
+
+include::08-the-queens-croquet-ground.adoc[]
+
+include::09-the-mock-turtles-story.adoc[]
+
+include::10-the-lobster-quadrille.adoc[]
+
+include::11-who-stole-the-tarts.adoc[]
+
+include::12-alices-evidence.adoc[]
