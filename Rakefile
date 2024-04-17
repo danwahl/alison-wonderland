@@ -1,3 +1,5 @@
+BUILD_DIR = "build"
+
 namespace :book do
   def exec_or_raise(command)
     puts `#{command}`
@@ -34,46 +36,37 @@ namespace :book do
   desc "build HTML format"
   task :build_html do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor #{params} -a data-uri wonderland-inc.adoc`
-    puts " -- HTML output at wonderland-inc.html"
+    `bundle exec asciidoctor #{params} -a data-uri -D #{BUILD_DIR} wonderland-inc.adoc`
+    puts " -- HTML output at #{BUILD_DIR}/wonderland-inc.html"
   end
 
   desc "build Epub format"
   task :build_epub do
     puts "Converting to EPub..."
-    `bundle exec asciidoctor-epub3 #{params} wonderland-inc.adoc`
-    puts " -- Epub output at wonderland-inc.epub"
+    `bundle exec asciidoctor-epub3 #{params} -D #{BUILD_DIR} wonderland-inc.adoc`
+    puts " -- Epub output at #{BUILD_DIR}/wonderland-inc.epub"
   end
 
   desc "build PDF format"
   task :build_pdf do
     puts "Converting to PDF... (this one takes a while)"
-    `bundle exec asciidoctor-pdf #{params} wonderland-inc.adoc 2>/dev/null`
-    puts " -- PDF output at wonderland-inc.pdf"
+    `bundle exec asciidoctor-pdf #{params} -D #{BUILD_DIR} wonderland-inc.adoc 2>/dev/null`
+    puts " -- PDF output at #{BUILD_DIR}/wonderland-inc.pdf"
   end
 
   desc "Check generated books"
   task check: [:build_html, :build_epub] do
     puts "Checking generated books"
 
-    exec_or_raise("htmlproofer .")
-    exec_or_raise("epubcheck wonderland-inc.epub")
+    exec_or_raise("htmlproofer #{BUILD_DIR}")
+    exec_or_raise("epubcheck #{BUILD_DIR}/wonderland-inc.epub")
   end
 
   desc "Clean all generated files"
   task :clean do
     puts "Removing generated files"
 
-    FileList["wonderland-inc.html", "wonderland-inc.epub", "wonderland-inc.pdf"].each do |file|
-      rm file
-
-      # Rescue if file not found
-    rescue Errno::ENOENT => e
-      begin
-        puts e.message
-        puts "Error removing files (ignored)"
-      end
-    end
+    rm_rf BUILD_DIR
   end
 end
 

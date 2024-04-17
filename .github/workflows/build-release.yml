@@ -41,7 +41,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wonderland-inc.html
+        asset_path: ./build/wonderland-inc.html
         asset_name: wonderland-inc.html
         asset_content_type: text/html
 
@@ -51,7 +51,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wonderland-inc.epub
+        asset_path: ./build/wonderland-inc.epub
         asset_name: wonderland-inc.epub
         asset_content_type: application/epub+zip
 
@@ -61,6 +61,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./wonderland-inc.pdf
+        asset_path: ./build/wonderland-inc.pdf
         asset_name: wonderland-inc.pdf
         asset_content_type: application/pdf
