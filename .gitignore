@@ -1,4 +1,4 @@
-se*.gem
+*.gem
 *.rbc
 /.config
 /coverage/

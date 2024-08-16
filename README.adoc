@@ -1,4 +1,4 @@
-= Wonderland Inc.
+= Alison Wonderland
 
 Project setup loosely based on https://github.com/progit/progit2/[Pro Git book].
 

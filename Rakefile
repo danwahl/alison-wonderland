@@ -36,22 +36,22 @@ namespace :book do
   desc "build HTML format"
   task :build_html do
     puts "Converting to HTML..."
-    `bundle exec asciidoctor #{params} -a data-uri -D #{BUILD_DIR} wonderland-inc.adoc`
-    puts " -- HTML output at #{BUILD_DIR}/wonderland-inc.html"
+    `bundle exec asciidoctor #{params} -a data-uri -D #{BUILD_DIR} alison-wonderland.adoc`
+    puts " -- HTML output at #{BUILD_DIR}/alison-wonderland.html"
   end
 
   desc "build Epub format"
   task :build_epub do
     puts "Converting to EPub..."
-    `bundle exec asciidoctor-epub3 #{params} -D #{BUILD_DIR} wonderland-inc.adoc`
-    puts " -- Epub output at #{BUILD_DIR}/wonderland-inc.epub"
+    `bundle exec asciidoctor-epub3 #{params} -D #{BUILD_DIR} alison-wonderland.adoc`
+    puts " -- Epub output at #{BUILD_DIR}/alison-wonderland.epub"
   end
 
   desc "build PDF format"
   task :build_pdf do
     puts "Converting to PDF... (this one takes a while)"
-    `bundle exec asciidoctor-pdf #{params} -D #{BUILD_DIR} wonderland-inc.adoc 2>/dev/null`
-    puts " -- PDF output at #{BUILD_DIR}/wonderland-inc.pdf"
+    `bundle exec asciidoctor-pdf #{params} -D #{BUILD_DIR} alison-wonderland.adoc 2>/dev/null`
+    puts " -- PDF output at #{BUILD_DIR}/alison-wonderland.pdf"
   end
 
   desc "Check generated books"
@@ -59,7 +59,7 @@ namespace :book do
     puts "Checking generated books"
 
     exec_or_raise("htmlproofer #{BUILD_DIR}")
-    exec_or_raise("epubcheck #{BUILD_DIR}/wonderland-inc.epub")
+    exec_or_raise("epubcheck #{BUILD_DIR}/alison-wonderland.epub")
   end
 
   desc "Clean all generated files"
