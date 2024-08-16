@@ -64,3 +64,15 @@ jobs:
         asset_path: ./build/alison-wonderland.pdf
         asset_name: alison-wonderland.pdf
         asset_content_type: application/pdf
+
+    - name: Rename HTML to index.html
+      run: mv ./build/alison-wonderland.html ./build/index.html
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        publish_branch: gh-pages
+        keep_files: false
+        exclude_assets: '*.epub,*.pdf'
