@@ -1,5 +1,5 @@
 = Alison Wonderland
-Lewis Carroll; John Tenniel; Daniel Wahl
+Daniel Wahl; Lewis Carroll; John Tenniel
 :doctype: book
 :sectnums:
 :toc: macro
